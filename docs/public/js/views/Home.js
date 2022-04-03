@@ -4,6 +4,31 @@ class Home extends ViewComponent {
   constructor() {
     super();
     this.setTitle("Home");
+
+    this.personalDetails = [
+      { key: "Age", value: "20" },
+      { key: "Address", value: "Daet, Camarines Norte, Bicol" },
+      { key: "Email", value: "martsalazar0@gmail.com" },
+    ];
+
+    this.socials = [
+      {
+        link: "https://www.linkedin.com/in/mart-anthony-salazar-420ba81b6/",
+        text: "Mart Anthony Salazar",
+        font: "fa-linkedin",
+      },
+      {
+        link: "https://github.com/mart-anthony-stark",
+        text: "mart-anthony-stark",
+        font: "fa-github",
+      },
+      {
+        link: "https://www.facebook.com/",
+        text: "martanthony.abanosalazar",
+        font: "fa-facebook",
+      },
+    ];
+    this.skills = [];
   }
   async render() {
     return `<main>
@@ -14,24 +39,23 @@ class Home extends ViewComponent {
             <h2>ABOUT ME</h2>
             <p><?php echo $bio ?></p>
             <div class="details">
-                <?php foreach($personal_details as $d) {?>
-                    <div class="personal-detail">
-                        <h3><?php echo $d->detail ?><span>: <?php echo $d->value ?></span></h3>
-                    </div>
-                <?php } ?>
+                    ${this.personalDetails.map(
+                      (skill) =>
+                        `<div class="personal-detail">
+                        <h3>${skill.key}<span>: ${skill.value}</span></h3>
+                    </div>`
+                    )}
             </div>
         </div>
 
         <div class="links">
             <h2>CONTACT</h2>
-        <?php
-            foreach($social_links as $i => $i_value) {
-                echo "<a href=$i_value->address target=_'blank'>
-                <i class='fa $i_value->icon' aria-hidden='true'></i>
-                    $i_value->linkname
-                </a>";
-            }
-        ?>
+                ${this.socials.map(
+                  (social) => `<a href=${social.link} target=_'blank'>
+                <i class=${social.font} aria-hidden='true'></i>
+                    ${social.text}
+                </a>`
+                )}
         </div>
     </div>
     <div class="info">
