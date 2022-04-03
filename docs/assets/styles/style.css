@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+:root {
+  --c-pri: #223243;
+  --c-pri-alpha: rgb(34, 50, 67);
+}
+body {
+  scroll-behavior: smooth;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner {
+  height: 150px;
+  background: linear-gradient(to right, rgb(34, 50, 67), rgba(34, 50, 67, 0.7)),
+    url("../images/tech.jpeg") bottom;
+  background-size: cover;
+  color: #fff;
+  padding: 10px;
+}
+.banner h1 {
+  font-size: 50px;
+}
+main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+.two-cols {
+  display: flex;
+  /* justify-content: center; */
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.sidebar {
+  min-height: calc(100vh);
+  background: var(--c-pri);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  color: #fff;
+}
+.sidebar .profile {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  background: url("../images/mart-white-bg.png") center;
+  background-size: cover;
+  border: 1px solid white;
+}
+.sidebar .info {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sidebar .info p {
+  text-align: center;
+}
+.sidebar .info .details .personal-detail {
+  margin: 10px 0;
+}
+.sidebar .info .details .personal-detail span {
+  font-weight: 400;
+}
+.sidebar .links {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sidebar .info h2,
+.sidebar .links h2 {
+  font-weight: 400;
+  text-decoration: underline;
+  text-align: center;
+}
+.sidebar .links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sidebar .links i {
+  background: rgb(255, 255, 255);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  color: var(--c-pri);
+}
+.info {
+  padding: 25px;
+  color: #223243;
+}
+.info .heading {
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+.objective p {
+  max-width: 90%;
+}
+.info section {
+  margin-top: 50px;
+}
+.education {
+  max-width: 400px;
+}
+.education .year {
+  font-weight: 900;
+  padding-right: 20px;
+}
+.education td {
+  padding: 5px;
+}
+.technical-skills {
+  width: 100%;
+}
+.technical-skills .skills-cont {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 15px;
+}
+.technical-skills .skills-cont .card {
+  box-shadow: 0 0 5px rgba(34, 50, 67, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 250px;
+  width: 100%;
+}
+.technical-skills .skills-cont .card .skill {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.technical-skills .skills-cont .card .profficiency {
+  border-radius: 5px;
+  position: relative;
+  background: rgb(141, 141, 141);
+  height: 5px;
+  width: 100%;
+}
+.technical-skills .skills-cont .card .profficiency .percent {
+  border-radius: 5px;
+  position: absolute;
+  background: var(--c-pri);
+  height: 100%;
+}
