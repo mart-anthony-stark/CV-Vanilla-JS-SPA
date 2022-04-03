@@ -121,20 +121,16 @@ class Home extends ViewComponent {
         <section class="technical-skills">
             <h2 class="heading">Technical Skills</h2>
             <div class="skills-cont">
-            <?php 
-                foreach($technical_skills as $skill_val){
-                ?>
-                    <div class="card">
-                        <h4 class="skill"><?php echo "<span>$skill_val->skill</span> <span>$skill_val->percent%</span>" ?></h4>
-                        <div class="profficiency">
-                            <span class="percent" 
-                            style=<?php 
-                                echo "width:$skill_val->percent%" 
-                            ?>
-                            ></span>
-                        </div>
-                    </div>
-                <?php }?>
+            ${this.technicalSkills
+              .map(
+                (skill) => `<div class="card">
+            <h4 class="skill">${skill.name}</span> <span>$${skill.percent}%</span></h4>
+            <div class="profficiency">
+                <span class="percent" style="width:${skill.percent}%"></span>
+            </div>
+        </div>`
+              )
+              .join("")}
             </div>
         </section>
         </div>
