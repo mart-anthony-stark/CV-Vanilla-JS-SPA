@@ -1,4 +1,4 @@
-import ViewComponent from "./ViewComponent.js";
+import ViewComponent from "./Component.js";
 
 class Home extends ViewComponent {
   constructor() {
@@ -39,23 +39,27 @@ class Home extends ViewComponent {
             <h2>ABOUT ME</h2>
             <p><?php echo $bio ?></p>
             <div class="details">
-                    ${this.personalDetails.map(
-                      (skill) =>
-                        `<div class="personal-detail">
+                    ${this.personalDetails
+                      .map(
+                        (skill) =>
+                          `<div class="personal-detail">
                         <h3>${skill.key}<span>: ${skill.value}</span></h3>
                     </div>`
-                    )}
+                      )
+                      .join("")}
             </div>
         </div>
 
         <div class="links">
             <h2>CONTACT</h2>
-                ${this.socials.map(
-                  (social) => `<a href=${social.link} target=_'blank'>
+                ${this.socials
+                  .map(
+                    (social) => `<a href=${social.link} target=_'blank'>
                 <i class=${social.font} aria-hidden='true'></i>
                     ${social.text}
                 </a>`
-                )}
+                  )
+                  .join("")}
         </div>
     </div>
     <div class="info">
