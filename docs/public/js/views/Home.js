@@ -28,7 +28,20 @@ class Home extends ViewComponent {
         font: "fa-facebook",
       },
     ];
-    this.skills = [];
+    this.softSkills = [
+      "Time Management",
+      "Patience",
+      "Verbal and Written Communication",
+      "Teamwork",
+      "Flexibility",
+      "Adaptability",
+      "Analytical Skills",
+    ];
+
+    this.technicalSkills = [
+      { name: "HTML", percent: 95 },
+      { name: "CSS", percent: 80 },
+    ];
   }
   async render() {
     return `<main>
@@ -41,9 +54,9 @@ class Home extends ViewComponent {
             <div class="details">
                     ${this.personalDetails
                       .map(
-                        (skill) =>
+                        (detail) =>
                           `<div class="personal-detail">
-                        <h3>${skill.key}<span>: ${skill.value}</span></h3>
+                        <h3>${detail.key}<span>: ${detail.value}</span></h3>
                     </div>`
                       )
                       .join("")}
@@ -99,11 +112,9 @@ class Home extends ViewComponent {
         <section class="soft-skills">
             <h2 class="heading">Soft Skills</h2>
             <ul>
-                <?php
-                    foreach($soft_skills as $x){
-                        echo "<li>$x</li>";
-                    }
-                ?>
+                    ${this.softSkills
+                      .map((skill) => `<li>${skill}</li>`)
+                      .join("")};
             </ul>
         </section>
 
