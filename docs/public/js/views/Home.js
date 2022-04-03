@@ -41,6 +41,13 @@ class Home extends ViewComponent {
     this.technicalSkills = [
       { name: "HTML", percent: 95 },
       { name: "CSS", percent: 80 },
+      { name: "Javascript", percent: 98 },
+      { name: "React", percent: 85 },
+      { name: "Vue", percent: 98 },
+      { name: "Svelte", percent: 60 },
+      { name: "Node.js", percent: 90 },
+      { name: "PHP", percent: 50 },
+      { name: "Java", percent: 85 },
     ];
   }
   async render() {
@@ -124,7 +131,7 @@ class Home extends ViewComponent {
             ${this.technicalSkills
               .map(
                 (skill) => `<div class="card">
-            <h4 class="skill">${skill.name}</span> <span>$${skill.percent}%</span></h4>
+            <h4 class="skill">${skill.name}</span><span>${skill.percent}%</span></h4>
             <div class="profficiency">
                 <span class="percent" style="width:${skill.percent}%"></span>
             </div>
